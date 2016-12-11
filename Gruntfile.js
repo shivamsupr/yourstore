@@ -20,11 +20,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'src/static/application/js/app.min.js': [
-                        'src/static/components/calendar/underscore.js',
-                        'src/static/components/calendar/moment.js',
-                        'src/static/components/calendar/clndr.js',
-                        'src/static/application/js/app.js']
+                    'src/static/application/js/app.min.js': ['src/static/application/js/app.js']
                 }
             }
         },
