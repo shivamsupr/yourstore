@@ -1,12 +1,22 @@
 module.exports = function(grunt) {
     grunt.initConfig({
+        watch: {
+            scripts: {
+                files: ['src/static/application/js/app.js'],
+                tasks: ['uglify']
+            },
+            css: {
+                files: 'src/static/application/css/app.css',
+                tasks: ['cssmin']
+            }
+        },
         uglify: {
             options: {
                 mangle: true,
                 compress: true,
                 beautify: false,
                 report: 'gzip, min',
-                banner: '/*\n Snap Calendar <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
+                banner: '/*\n YourStore <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
             },
             dist: {
                 files: {
@@ -21,7 +31,7 @@ module.exports = function(grunt) {
         cssmin: {
             options: {
                 keepSpecialComments: 0,
-                banner: '/*\n Snap Calendar <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
+                banner: '/*\n YourStore <%= grunt.template.today("yyyy-mm-dd") %> \n*/\n'
             },
             combine: {
                 files: {
@@ -40,6 +50,7 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.registerTask('default', ['uglify', 'cssmin']);
 

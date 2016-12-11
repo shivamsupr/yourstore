@@ -1,0 +1,160 @@
+@import "swatch";
+@import "app_variables";
+@import "app_mixins";
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+body {
+  color: $oil;
+  background-color: $white;
+  line-height: 1.42857;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: $app-text-size;
+  font-family: 'Open Sans', sans-serif;
+}
+
+* {
+  outline: none !important;
+}
+
+//-------------------- Common ---------------------------------
+
+.blk {
+  width: 100%;
+  @include app-clearfix();
+}
+
+.pg-cnt {
+  width: 100%;
+}
+
+.hlst {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  &--itm {
+    display: inline-block;
+    vertical-align: top;
+    padding: 5px 10px;
+  }
+}
+
+.text {
+  &--left {
+    text-align: left;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--right {
+    text-align: right;
+  }
+}
+
+.img {
+  position: relative;
+  width: 100%;
+  height: 100px;
+
+  &__c {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+//-------------------- Pages ---------------------------------
+
+.pg-yourstore {
+  padding: 50px 0 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  .hdr {
+    margin-top: -50px;
+    height: 50px;
+    line-height: 45px;
+    padding: 0 15px;
+    background-color: $iron;
+    font-size: $app-text-l-size;
+  }
+
+  .bdy {
+    min-height: 100%;
+
+    &--cntnt {
+      margin-top: 120px;
+      font-size: $app-text-l-size;
+    }
+
+    &--rgt-flyr {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 375px;
+      height: 300px;
+      border: 1px solid $iron;
+      -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      -moz-box-shadow:  0 2px 5px rgba(0,0,0,0.2);
+      box-shadow:  0 2px 5px rgba(0,0,0,0.2);
+
+      &--cls {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 5px 10px;
+        cursor: pointer;
+        font-size: $app-text-xl-size - $app-text-xl-reduction;
+      }
+
+      &--cnt {
+        padding: 30px;
+
+        &__ttl {
+          font-size: $app-text-l-size;
+          padding: 0 0 20px;
+        }
+      }
+
+      &--lst {
+        &__itm {
+          padding: 0;
+          width: 148px;
+          margin-right: 10px;
+          border: 1px solid $smoke;
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          &--outr-dts {
+            height: 100px;
+            background-color: $white-smoke;
+          }
+
+          &--innr-dts {
+            padding: 20px;
+          }
+
+          &--ttl {
+            font-weight: bold;
+            font-size: $app-text-m-size;
+          }
+        }
+      }
+    }
+  }
+}
